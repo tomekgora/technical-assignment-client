@@ -1,6 +1,7 @@
 import * as React from "react";
 import { observer, inject } from "mobx-react";
 import styled from "styled-components";
+import Delay from "react-delay";
 
 class Joke extends React.Component {
   componentDidMount() {
@@ -31,7 +32,9 @@ class Joke extends React.Component {
         {this.props.JokeStore.jokeData.map(joke => (
           <div key={joke.id}>
             <JokeSetup>{joke.setup}</JokeSetup>
-            <JokePunchline>{joke.punchline}</JokePunchline>
+            <Delay wait={5000}>
+              <JokePunchline>{joke.punchline}</JokePunchline>
+            </Delay>
           </div>
         ))}
       </div>
