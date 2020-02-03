@@ -21,6 +21,18 @@ class Joke extends React.Component {
       margin: 0.5rem 1rem;
     `;
 
+    const RefreshButton = styled.button`
+      color: yellow;
+      width: 10rem;
+      height: 2rem;
+      background-color: black;
+      font: bold;
+      border: 0;
+      &:hover {
+        background-color: grey;
+      }
+    `;
+
     console.log("The Joke is rendering");
     console.log("JokeStore", this.props.JokeStore.jokeData);
 
@@ -34,6 +46,11 @@ class Joke extends React.Component {
             <JokeSetup>{joke.setup}</JokeSetup>
             <Delay wait={5000}>
               <JokePunchline>{joke.punchline}</JokePunchline>
+              <RefreshButton
+                onClick={() => this.props.JokeStore.getJokeAsync()}
+              >
+                Fetch Next Joke!
+              </RefreshButton>
             </Delay>
           </div>
         ))}
