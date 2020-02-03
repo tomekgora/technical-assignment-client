@@ -11,8 +11,10 @@ class JokeStore {
   getJokeAsync = async () => {
     try {
       const data = await this.jokeService.get();
+      console.log("data", data);
       runInAction(() => {
         this.jokeData = data;
+        console.log("this is the jokeData:", this.jokeData);
       });
     } catch (error) {
       runInAction(() => {
