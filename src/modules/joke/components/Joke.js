@@ -9,20 +9,22 @@ class Joke extends React.Component {
 
   render() {
     const JokeSetup = styled.a`
-      display: inline-block;
+      display: block;
       color: green;
+      margin: 0.5rem 1rem;
     `;
 
     const JokePunchline = styled.a`
-      display: inline-block;
+      display: block;
       color: yellow;
+      margin: 0.5rem 1rem;
     `;
 
     console.log("The Joke is rendering");
     console.log("JokeStore", this.props.JokeStore.jokeData);
 
     if (!this.props.JokeStore.jokeData) {
-      return "Joke is loading...";
+      return "Your programming joke is loading...";
     }
     return (
       <div>
