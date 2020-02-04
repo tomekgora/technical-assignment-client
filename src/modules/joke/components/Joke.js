@@ -44,7 +44,7 @@ class Joke extends React.Component {
         {this.props.JokeStore.jokeData.map(joke => (
           <div key={joke.id}>
             <JokeSetup>{joke.setup}</JokeSetup>
-            <Delay wait={5000}>
+            <Delay wait={4000}>
               <JokePunchline>{joke.punchline}</JokePunchline>
               <RefreshButton
                 onClick={() => this.props.JokeStore.getJokeAsync()}
